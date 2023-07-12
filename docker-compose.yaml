@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  microstrain_imu:
+    build:
+      dockerfile: Dockerfile
+      no_cache: true
+    image: microstrain_imu:latest
+    container_name: microstrain_imu
+    privileged: true
+    network_mode: "host"
+    restart: unless-stopped
+    environment:
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+      - CYCLONEDDS_URI=file:///home/indro/cyclonedds.xml
+    command: ros2 topic list
