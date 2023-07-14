@@ -11,8 +11,8 @@ RUN source /opt/ros/humble/setup.bash && \
 
 #installing required python libraries and compiling code      
 WORKDIR /home/indro/colcon_ws
-#RUN apt update
-#RUN apt upgrade -y
+RUN apt update
+RUN apt upgrade -y
 RUN apt-get update && sudo apt-get install ros-humble-microstrain-inertial-driver -y
 RUN apt-get update && sudo apt-get install ros-humble-microstrain-inertial-rqt -y
 RUN pip install setuptools==58.2.0
