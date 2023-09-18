@@ -14,6 +14,6 @@ services:
     environment:
       - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
       - CYCLONEDDS_URI=file:///home/indro/cyclonedds.xml
-    volume:
+    volumes:
       - /dev:/dev
     command: ros2 launch microstrain_inertial_driver microstrain_launch.py configure:=true activate:=true
